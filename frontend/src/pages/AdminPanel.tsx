@@ -98,8 +98,8 @@ const AdminPanel: React.FC = () => {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center space-x-2 ${
                   activeTab === tab.id
-                    ? 'border-moses-blue text-moses-blue'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    ? 'border-blue-400 text-blue-400'
+                    : 'border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-600'
                 }`}
               >
                 <span>{tab.icon}</span>
@@ -138,16 +138,16 @@ const OverviewTab: React.FC<{ stats: Stats | null }> = ({ stats }) => (
     </div>
     
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-gray-50 rounded-lg p-6">
-        <h3 className="text-lg font-medium text-gray-900 mb-4">Recent Activity</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-medium text-white mb-4">Recent Activity</h3>
         <div className="space-y-3">
           <div className="flex items-center space-x-3">
-            <span className="text-green-500">✅</span>
-            <span className="text-sm text-gray-600">John Doe completed Safety Training</span>
-            <span className="text-xs text-gray-400">2 hours ago</span>
+            <span className="text-green-400">✅</span>
+            <span className="text-sm text-gray-300">John Doe completed Safety Training</span>
+            <span className="text-xs text-gray-500">2 hours ago</span>
           </div>
           <div className="flex items-center space-x-3">
-            <span className="text-blue-500">👤</span>
+            <span className="text-blue-400">👤</span>
             <span className="text-sm text-gray-600">New user Jane Smith registered</span>
             <span className="text-xs text-gray-400">4 hours ago</span>
           </div>
@@ -159,16 +159,16 @@ const OverviewTab: React.FC<{ stats: Stats | null }> = ({ stats }) => (
         </div>
       </div>
       
-      <div className="bg-gray-50 rounded-lg p-6">
-        <h3 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-medium text-white mb-4">Quick Actions</h3>
         <div className="space-y-3">
-          <button className="w-full text-left p-3 bg-white rounded-md hover:bg-gray-50 transition duration-200">
+          <button className="btn w-full text-left">
             📢 Create Announcement
           </button>
-          <button className="w-full text-left p-3 bg-white rounded-md hover:bg-gray-50 transition duration-200">
+          <button className="btn w-full text-left">
             👥 Add New User
           </button>
-          <button className="w-full text-left p-3 bg-white rounded-md hover:bg-gray-50 transition duration-200">
+          <button className="btn w-full text-left">
             📚 Assign Training
           </button>
         </div>
@@ -180,36 +180,36 @@ const OverviewTab: React.FC<{ stats: Stats | null }> = ({ stats }) => (
 const UsersTab: React.FC<{ users: User[]; onRefresh: () => void }> = ({ users, onRefresh }) => (
   <div className="space-y-6">
     <div className="flex items-center justify-between">
-      <h2 className="text-lg font-semibold text-gray-900">User Management</h2>
+      <h2 className="text-lg font-semibold text-white">User Management</h2>
       <button
         onClick={onRefresh}
-        className="bg-moses-blue hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition duration-200"
+        className="btn btn-primary text-sm"
       >
         Refresh
       </button>
     </div>
     
     <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
+      <table className="min-w-full divide-y divide-gray-600">
+        <thead className="bg-black bg-opacity-20">
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">User</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Department</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Roles</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Login</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">User</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Department</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Roles</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Last Login</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Actions</th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-transparent divide-y divide-gray-600">
           {users.map((user) => (
-            <tr key={user.id} className="hover:bg-gray-50">
+            <tr key={user.id} className="hover:bg-white hover:bg-opacity-10">
               <td className="px-6 py-4 whitespace-nowrap">
                 <div>
-                  <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                  <div className="text-sm text-gray-500">{user.email}</div>
+                  <div className="text-sm font-medium text-white">{user.name}</div>
+                  <div className="text-sm text-gray-400">{user.email}</div>
                 </div>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
                 {user.department}
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
@@ -217,19 +217,19 @@ const UsersTab: React.FC<{ users: User[]; onRefresh: () => void }> = ({ users, o
                   {user.roles.map((role) => (
                     <span
                       key={role}
-                      className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full"
+                      className="px-2 py-1 text-xs font-medium bg-blue-900 text-blue-200 rounded-full"
                     >
                       {role}
                     </span>
                   ))}
                 </div>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-400">
                 {new Date(user.lastLogin).toLocaleDateString()}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                <button className="text-moses-blue hover:text-blue-700 mr-3">Edit</button>
-                <button className="text-green-600 hover:text-green-700">Assign Training</button>
+                <button className="text-blue-400 hover:text-blue-300 mr-3">Edit</button>
+                <button className="text-green-400 hover:text-green-300">Assign Training</button>
               </td>
             </tr>
           ))}
@@ -264,32 +264,32 @@ const AnnouncementsTab: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-lg font-semibold text-gray-900">Create Announcement</h2>
+      <h2 className="text-lg font-semibold text-white">Create Announcement</h2>
       
       <form onSubmit={handleCreateAnnouncement} className="space-y-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-300 mb-2">
             Title
           </label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-moses-blue"
+            className="form-input"
             placeholder="Enter announcement title"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-300 mb-2">
             Content
           </label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             rows={4}
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-moses-blue"
+            className="form-input"
             placeholder="Enter announcement content"
             required
           />
@@ -297,7 +297,7 @@ const AnnouncementsTab: React.FC = () => {
         
         <button
           type="submit"
-          className="bg-moses-blue hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition duration-200"
+          className="btn btn-primary"
         >
           Create Announcement
         </button>
@@ -313,14 +313,14 @@ interface StatCardProps {
 }
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, icon }) => (
-  <div className="bg-gray-50 rounded-lg p-6">
+  <div className="card p-6">
     <div className="flex items-center">
-      <div className="p-2 bg-white rounded-lg">
+      <div className="p-2 bg-black bg-opacity-20 rounded-lg">
         <span className="text-xl">{icon}</span>
       </div>
       <div className="ml-4">
-        <p className="text-sm text-gray-600">{title}</p>
-        <p className="text-2xl font-semibold text-gray-900">{value}</p>
+        <p className="text-sm text-gray-400">{title}</p>
+        <p className="text-2xl font-semibold text-white">{value}</p>
       </div>
     </div>
   </div>
