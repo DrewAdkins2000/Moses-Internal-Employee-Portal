@@ -77,15 +77,15 @@ const AdminPanel: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Admin Panel</h1>
+      <div className="card p-6">
+        <h1 className="text-2xl font-bold text-white mb-2">Admin Panel</h1>
         <p className="text-gray-600">
           Manage users, training assignments, and system settings.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="card">
         <div className="border-b border-gray-200">
           <nav className="-mb-px flex space-x-8 px-6">
             {[

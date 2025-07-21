@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { useAuth } from '../hooks/useAuth';
 import Navigation from './Navigation';
 
 interface LayoutProps {
@@ -8,7 +7,6 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, user }) => {
-  const { logout } = useAuth();
 
   return (
     <div className="min-h-screen">
@@ -34,25 +32,6 @@ const Layout: React.FC<LayoutProps> = ({ children, user }) => {
               <h1 className="text-2xl font-bold text-white">
                 Internal Employee Portal
               </h1>
-            </div>
-            
-            {/* User Info & Sign Out - Right with margin */}
-            <div className="flex items-center" style={{ marginRight: '60px' }}>
-              <div className="text-right">
-                <span className="text-sm text-white font-medium">
-                  {user?.name || 'User'}
-                </span>
-                <p className="text-xs text-gray-300">
-                  {user?.email || ''}
-                </p>
-              </div>
-              <button
-                onClick={logout}
-                className="btn btn-primary text-xs"
-                style={{ marginLeft: '40px' }}
-              >
-                Sign Out
-              </button>
             </div>
           </div>
         </div>

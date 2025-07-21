@@ -87,11 +87,11 @@ const DocumentsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-lg shadow p-6">
+      <div className="card p-6">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Company Documents</h1>
-            <p className="text-gray-600">
+            <h1 className="text-2xl font-bold text-white mb-2">Company Documents</h1>
+            <p className="text-gray-300">
               Access company policies, procedures, and process manuals.
             </p>
             {currentFolder && (
@@ -134,7 +134,7 @@ const DocumentsPage: React.FC = () => {
 
       {/* Folders */}
       {!currentFolder && folders.length > 0 && (
-        <div className="bg-white rounded-lg shadow">
+        <div className="card">
           <div className="p-6 border-b border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900">Folders</h2>
           </div>
@@ -161,7 +161,7 @@ const DocumentsPage: React.FC = () => {
       )}
 
       {/* Documents */}
-      <div className="bg-white rounded-lg shadow">
+      <div className="card">
         <div className="p-6 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900">
             {currentFolder ? `Documents in ${currentFolder}` : 'Recent Documents'}

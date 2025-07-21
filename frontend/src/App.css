@@ -547,6 +547,20 @@ a:active {
   transform: translateY(-2px);
 }
 
+.btn-danger {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  color: #ffffff;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(220, 38, 38, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Quick Action Cards - Button Style */
 .quick-action-card {
   background: var(--moses-gradient-metallic);

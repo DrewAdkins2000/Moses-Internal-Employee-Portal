@@ -8,7 +8,7 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ user }) => {
   const location = useLocation();
-  const { isAdmin } = useAuth();
+  const { isAdmin, logout } = useAuth();
 
   const navItems = [
     { name: 'Dashboard', href: '/', icon: '🏠' },
@@ -83,6 +83,14 @@ const Navigation: React.FC<NavigationProps> = ({ user }) => {
           <p className="text-xs text-gray-400 mt-2">
             <strong>Role:</strong> {user?.roles?.join(', ') || 'Employee'}
           </p>
+          
+          {/* Sign Out Button */}
+          <button
+            onClick={logout}
+            className="btn btn-danger w-full mt-4 text-sm"
+          >
+            Sign Out
+          </button>
         </div>
       </div>
     </nav>
