@@ -19,6 +19,7 @@ const Navigation: React.FC<NavigationProps> = ({ user }) => {
   ];
 
   if (isAdmin) {
+    navItems.push({ name: 'Training Admin', href: '/training-admin', icon: '🎓' });
     navItems.push({ name: 'Admin Panel', href: '/admin', icon: '⚙️' });
   }
 

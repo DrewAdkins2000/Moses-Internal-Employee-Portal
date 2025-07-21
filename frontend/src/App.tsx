@@ -4,6 +4,7 @@ import { useAuth } from './hooks/useAuth';
 import LoginPage from './pages/LoginPage';
 import Dashboard from './pages/Dashboard';
 import TrainingCenter from './pages/TrainingCenter';
+import TrainingAdmin from './pages/TrainingAdmin';
 import EventsPage from './pages/EventsPage';
 import DocumentsPage from './pages/DocumentsPage';
 import AdminPanel from './pages/AdminPanel';
@@ -36,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/training" element={<TrainingCenter />} />
+          <Route path="/training-admin" element={<TrainingAdmin />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/documents" element={<DocumentsPage />} />
           <Route path="/admin" element={<AdminPanel />} />
