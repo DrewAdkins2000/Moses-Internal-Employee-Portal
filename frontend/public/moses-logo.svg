@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Circle with text -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="3"/>
+  
+  <!-- Inner circle background -->
+  <circle cx="100" cy="100" r="75" fill="currentColor" opacity="0.05"/>
+  
+  <!-- Top arc text path (HUSTLE - INTEGRITY - CARING) -->
+  <path id="topArc" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="currentColor">
+    <textPath href="#topArc" startOffset="5%">HUSTLE • INTEGRITY • CARING</textPath>
+  </text>
+  
+  <!-- Bottom arc text path -->
+  <path id="bottomArc" d="M 170 100 A 70 70 0 0 1 30 100" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="currentColor">
+    <textPath href="#bottomArc" startOffset="5%">HUSTLE • INTEGRITY • CARING</textPath>
+  </text>
+  
+  <!-- MOSES text -->
+  <text x="100" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="currentColor">MOSES</text>
+  
+  <!-- AutoMall text with oval background -->
+  <ellipse cx="100" cy="95" rx="45" ry="12" fill="currentColor"/>
+  <text x="100" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">AutoMall</text>
+  
+  <!-- HUNTINGTON text -->
+  <text x="100" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="currentColor">HUNTINGTON</text>
+  
+  <!-- Three stars -->
+  <g fill="currentColor">
+    <polygon points="88,130 90,136 96,136 91,140 93,146 88,142 83,146 85,140 80,136 86,136" transform="scale(0.6)"/>
+    <polygon points="100,130 102,136 108,136 103,140 105,146 100,142 95,146 97,140 92,136 98,136" transform="scale(0.6)"/>
+    <polygon points="112,130 114,136 120,136 115,140 117,146 112,142 107,146 109,140 104,136 110,136" transform="scale(0.6)"/>
+  </g>
+</svg>
